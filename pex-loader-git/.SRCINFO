@@ -1,0 +1,16 @@
+pkgbase = pex-loader-git
+	pkgdesc = A library for loading and parsing PEX files. Written for pyke
+	pkgver = 1.0.0
+	pkgrel = 1
+	url = https://github.com/kodo-pp/pex-loader
+	arch = x86_64
+	license = Apache
+	makedepends = meson
+	makedepends = ninja
+	depends = libbinary-format
+	provides = pex-loader
+	source = git+https://github.com/kodo-pp/pex-loader
+	sha256sums = SKIP
+
+pkgname = pex-loader-git
+
