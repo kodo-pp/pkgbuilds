@@ -1,0 +1,15 @@
+pkgbase = libbinary-format-git
+	pkgdesc = A small library helping in reading binary formats. Designed specifically for Pyke
+	pkgver = 1.0.0
+	pkgrel = 1
+	url = https://github.com/kodo-pp/libbinary_format
+	arch = x86_64
+	license = Apache
+	makedepends = meson
+	makedepends = ninja
+	provides = libbinary-format
+	source = git+https://github.com/kodo-pp/libbinary_format
+	sha256sums = SKIP
+
+pkgname = libbinary-format-git
+

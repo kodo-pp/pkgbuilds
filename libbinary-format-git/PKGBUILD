@@ -1,0 +1,30 @@
+pkgname=libbinary-format-git
+pkgdesc='A small library helping in reading binary formats. Designed specifically for Pyke'
+pkgver=1.0.0
+pkgrel=1
+license=('Apache')
+arch=(x86_64)
+url='https://github.com/kodo-pp/libbinary_format'
+
+provides=(libbinary-format)
+makedepends=(meson ninja)
+
+source=('git+https://github.com/kodo-pp/libbinary_format')
+sha256sums=('SKIP')
+
+build() {
+    cd "${srcdir}/libbinary_format"
+    meson setup build -Dbuildtype=release --prefix=/usr
+    cd build
+    ninja
+}
+
+check() {
+    cd "${srcdir}/libbinary_format/build"
+    ./catch2_test
+}
+
+package() {
+    cd "${srcdir}/libbinary_format/build"
+    DESTDIR="${pkgdir}" ninja install
+}
