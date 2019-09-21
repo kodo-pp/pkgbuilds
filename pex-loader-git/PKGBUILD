@@ -1,6 +1,6 @@
 pkgname=pex-loader-git
 pkgdesc='A library for loading and parsing PEX files. Written for pyke'
-pkgver=1.0.0
+pkgver=1.0.0_1_g0422659
 pkgrel=1
 license=('Apache')
 arch=(x86_64)
