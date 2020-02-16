@@ -1,0 +1,15 @@
+pkgbase = select-rect-git
+	pkgdesc = A simple tool that allows to select a rectangular area on an image
+	pkgver = 1.0.0
+	pkgrel = 1
+	url = https://github.com/kodo-pp/select-rect
+	arch = any
+	license = Custom:CC0
+	makedepends = git
+	depends = python
+	provides = select-rect
+	source = git+https://github.com/kodo-pp/select-rect
+	sha256sums = SKIP
+
+pkgname = select-rect-git
+

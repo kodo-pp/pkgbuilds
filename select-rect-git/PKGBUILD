@@ -1,0 +1,18 @@
+pkgname=select-rect-git
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="A simple tool that allows to select a rectangular area on an image"
+arch=(any)
+url="https://github.com/kodo-pp/select-rect"
+license=('Custom:CC0')
+depends=(python)
+makedepends=(git)
+provides=(select-rect)
+source=('git+https://github.com/kodo-pp/select-rect')
+sha256sums=('SKIP')
+
+package() {
+    cd "$srcdir/select-rect"
+    install select-rect.py "$pkgdir/usr/bin/select-rect" -Dm755
+    install COPYING "$pkgdir/usr/share/licenses/select-rect-git/COPYING" -Dm644
+}
