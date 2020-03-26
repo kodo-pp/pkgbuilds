@@ -1,0 +1,15 @@
+pkgbase = tem-git
+	pkgdesc = A simple tool to setup a working directory from a template
+	pkgver = r8
+	pkgrel = 1
+	url = https://github.com/kodo-pp/tem
+	arch = any
+	license = MIT
+	depends = python>=3.7
+	depends = python-pyaml
+	provides = tem
+	source = git+https://github.com/kodo-pp/tem
+	sha256sums = SKIP
+
+pkgname = tem-git
+

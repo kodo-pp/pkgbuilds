@@ -1,0 +1,25 @@
+pkgname=tem-git
+pkgver=r8
+pkgrel=1
+pkgdesc="A simple tool to setup a working directory from a template"
+arch=(any)
+url="https://github.com/kodo-pp/tem"
+license=(MIT)
+depends=('python>=3.7' 'python-pyaml')
+provides=(tem)
+source=(git+https://github.com/kodo-pp/tem)
+sha256sums=('SKIP')
+
+pkgver() {
+    local rev_number="$(git rev-list --count HEAD)"
+    printf "r%d\n" "$rev_number"
+}
+
+package() {
+    cd "$srcdir/tem"
+    install -Dm755 "tem.py" "$pkgdir/usr/bin/tem"
+    install -Dm644 "LICENSE" "$pkgdir/usr/share/licenses/tem-git/LICENSE"
+}
+
+# vim:set ts=4 sw=4 et:
+
