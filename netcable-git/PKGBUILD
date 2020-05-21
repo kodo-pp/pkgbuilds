@@ -1,0 +1,28 @@
+pkgname=netcable-git
+pkgver=r9
+pkgrel=1
+pkgdesc="A small toolkit designed to connect TCP endpoints in various ways"
+#epoch=0
+arch=(any)
+url="https://github.com/kodo-pp/netcable"
+license=(CC0)
+depends=("python")
+provides=(netcable)
+source=(git+"${url}")
+md5sums=(SKIP)
+sha1sums=(SKIP)
+sha256sums=(SKIP)
+
+
+pkgver() {
+    local rev_number="$(git rev-list --count HEAD)"
+    printf "r%d\n" "$rev_number"
+}
+
+package() {
+    cd "$srcdir/netcable"
+    python setup.py install --root="${pkgdir}" --optimize=1
+}
+
+# vim:set ts=4 sw=4 et:
+
