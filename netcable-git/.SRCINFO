@@ -1,11 +1,12 @@
 pkgbase = netcable-git
 	pkgdesc = A small toolkit designed to connect TCP endpoints in various ways
-	pkgver = r9
-	pkgrel = 1
+	pkgver = r10
+	pkgrel = 2
 	url = https://github.com/kodo-pp/netcable
 	arch = any
 	license = CC0
 	depends = python
+	depends = python-setuptools
 	provides = netcable
 	source = git+https://github.com/kodo-pp/netcable
 	md5sums = SKIP

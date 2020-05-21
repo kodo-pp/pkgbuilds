@@ -1,12 +1,12 @@
 pkgname=netcable-git
-pkgver=r9
-pkgrel=1
+pkgver=r10
+pkgrel=2
 pkgdesc="A small toolkit designed to connect TCP endpoints in various ways"
 #epoch=0
 arch=(any)
 url="https://github.com/kodo-pp/netcable"
 license=(CC0)
-depends=("python")
+depends=("python" "python-setuptools")
 provides=(netcable)
 source=(git+"${url}")
 md5sums=(SKIP)
