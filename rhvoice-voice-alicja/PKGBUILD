@@ -1,0 +1,22 @@
+pkgname=rhvoice-voice-alicja
+pkgver=4.1
+pkgrel=1
+pkgdesc="Alicja - Polish female voice for RHVoice."
+#epoch=0
+arch=(any)
+url="https://github.com/RHVoice/alicja-pol"
+license=(custom:CC-BY)
+depends=(rhvoice rhvoice-language-polish)
+source=(https://github.com/RHVoice/alicja-pol/archive/refs/tags/v${pkgver}.tar.gz license.txt)
+sha256sums=('95e4d7e010463f82a9cc987471704dcc152b90476c92c782c4ef90eb968a6787'
+            '9e5f1b3c610b9c2da5c313bf81d577a7d1acec686bdb0384edefa6df0f90cd94')
+
+package() {
+  cd "$srcdir/alicja-pol-$pkgver"
+  install -Dm 755 -d "$pkgdir/usr/share/RHVoice/voices/alicja"
+  cp -r voice.info voice.params attrib.html 16000 24000 "$pkgdir/usr/share/RHVoice/voices/alicja/"
+  install -Dm 644 -t "$pkgdir/usr/share/licenses/$pkgname/" ../license.txt
+}
+
+# vim:set ts=2 sw=2 et:
+
